@@ -116,15 +116,15 @@ document.write(str / 2 + "<br/>");*/
 let st = "20";
 let a = 5;
 
-document.write(st + a + "<br/>"); //205
-document.write(st - a + "<br/>"); //15
+document.write(st + a + "<br/>"); //205 Через приведення типів за допомогою "+" вираз перейшов у стрінговий тип, після чого до напису 20 було дописано напис 5.
+document.write(st - a + "<br/>"); //15 в інших випадках при використанні операторів "-", "*", "/", напис 20 сприймається за число та відбувається дія, яка вказана у виразі.
 document.write(st * "2" + "<br/>"); //40
 document.write(st / 2 + "<br/>"); //10
 
 /*13. С помощью окна ввода, вызываемого методом prompt, сделать сложение двух чисел, а вывод результата при помощи метода alert*/
 
-let z = prompt('Введіть перше число', '');
-let x = prompt('Введіть друге число', '');
+let z = +prompt('Введіть перше число', '');
+let x = +prompt('Введіть друге число', '');
 
 alert( z + x );
 
@@ -142,8 +142,6 @@ alert('Доброго вечера ' + name + ' ' + surname + ', мои позд
 =====================*/
 
 
-
-
 /*1. Три різних числа вводяться через prompt().
     За допомоги if else вивести іх в порядку зростання. (відсортувати по зростанню)*/
 
@@ -157,44 +155,44 @@ let three;
 
 //123
 if (first <= second  && first <= third && second <= third) {
-    one = first
-    two = second
-    three = third
+    one = first;
+    two = second;
+    three = third;
 }
 
 //132
 if (first <= second  && first <= third && second >= third) {
-    one = first
-    two = third
-    three = second
+    one = first;
+    two = third;
+    three = second;
 }
 
 //213
 if (first >= second  && second <= third && first <= third) {
-    one = second
-    two = first
-    three = third
+    one = second;
+    two = first;
+    three = third;
 }
 
 //231
 if (first >= second  && second <= third && first >= third) {
-    one = second
-    two = third
-    three = first
+    one = second;
+    two = third;
+    three = first;
 }
 
 //312
 if (first <= second  && first >= third && second >= third) {
-    one = third
-    two = first
-    three = second
+    one = third;
+    two = first;
+    three = second;
 }
 
 //321
 if (first >= second  && first <= third && second <= third) {
-    one = third
-    two = second
-    three = first
+    one = third;
+    two = second;
+    three = first;
 }
 
 alert('Сортировка по возрозстанию: ' + one + ' ' + two + ' ' + three);
@@ -206,7 +204,26 @@ alert('Сортировка по возрозстанию: ' + one + ' ' + two +
     Если светофор красный - вывести "стой".
     Если светофор в аварийном режиме вывести "делай что хочешь"!*/
 
+let shines = +prompt('Посмотри на светофор и скажи, какой сияет цвет?\n' +
+    '1 - зеленый\n' +
+    '2 - желный\n' +
+    '3 - красный\n' +
+    '4 - не работает\n', '');
 
+let green = 'Иди.';
+let yellow = 'Подожди...';
+let red = 'Стой!';
+let broken = 'Да прибудет с тобой сила!';
+
+if (shines === 1) {
+    alert(green);
+} else if (shines === 2) {
+    alert(yellow);
+} else if (shines === 3) {
+    alert(red);
+} else if (shines === 4) {
+    alert(broken);
+}
 
     /*3. Все параметры получаем с клавиатуры!!!!(prompt , confirm)
 Создать переменную isRoadClear которая характеризирует наличие на дороге машин.
@@ -218,3 +235,33 @@ alert('Сортировка по возрозстанию: ' + one + ' ' + two +
     Если светофор красный и машин нет- вывести "стой все рано".
     Если светофор красный - и машины есть вывести "стой и жди".
     Если светофор в аварийном режиме вывести "делай что хочешь"!*/
+
+let shines1 = +prompt('Посмотри на светофор и скажи, какой сияет цвет?\n' +
+    '1 - зеленый\n' +
+    '2 - желный\n' +
+    '3 - красный\n' +
+    '4 - не работает\n', '');
+
+let isRoadClear = +prompt('А машины есть?\n' +
+    '1 - да\n' +
+    '2 - нет\n', '');
+
+if (shines1 === 1 && isRoadClear === 2) {
+    alert('иди');
+} else if(shines1 === 1 && isRoadClear === 1) {
+    alert('подожди пока нарушители проедут');
+} else if(shines1 === 2 && isRoadClear === 2) {
+    alert('все рано жди');
+} else if(shines1 === 2 && isRoadClear === 1) {
+    alert('жди');
+} else if(shines1 === 3 && isRoadClear === 2) {
+    alert('все равно стой');
+} else if(shines1 === 3 && isRoadClear === 1) {
+    alert('стой и жди');
+} else if(shines1 === 4) {
+    alert('да прибудет с тобой сила');
+}
+
+
+
+
